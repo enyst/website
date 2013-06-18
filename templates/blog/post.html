@@ -9,7 +9,7 @@
 
 {% block content %}
 
-    {% if user.is_staff %}
+    {% if user.is_staff() %}
         <p class="text-right">
             <a href="/blog/edit/{{ post.id }}" class="btn">{% trans "Edit" %}</a>
             <a href="/blog/delete/{{ post.id }}" class="btn">{% trans "Delete" %}</a>

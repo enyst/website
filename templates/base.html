@@ -18,8 +18,8 @@
                         <div class="navbar-inner">
                             <a class="brand" href="/">Inboxen</a>
                             <ul class="nav">
-                                {% if user.is_authenticated %}
-                                    {% if user.is_staff %}
+                                {% if user.is_authenticated() %}
+                                    {% if user.is_staff() %}
                                         <li><a href="/admin">{% trans "Admin" %}</a></li>
                                     {% endif %}
                                     <li><a href="/email/add">{% trans "Add Alias" %}</a></li>

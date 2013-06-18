@@ -10,7 +10,7 @@
 
 {% block content %}
 
-    {% if user.is_staff %}
+    {% if user.is_staff() %}
         <p class="text-right"><a href="/blog/add/" class="btn">{% trans "New Post" %}</a></p>
     {% endif %}
 
@@ -20,7 +20,7 @@
         <p class="text-right"><i>{{ post.date }}</i></p>
         <p> {{ post.body|markdown }}</p><br />
         <br />
-        {% if user.is_staff %}
+        {% if user.is_staff() %}
             <p>    <a href="/blog/edit/{{ post.id }}" class="btn">{% trans "Edit" %}</a>
                 <a href="/blog/delete/{{ post.id }}" class="btn">{% trans "Delete" %}</a>
             </p>
