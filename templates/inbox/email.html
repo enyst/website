@@ -39,9 +39,9 @@
     <br />
     <strong>{% trans "Attachments" %}</strong>:<br />
     {% for attachment in email.attachments %}
-        <div class="input-prepend">
-            <span class="add-on">{{ attachment.content_disposition }} ({{ attachment.content_type }})</span>
-            <span class="btn-group" id="prependedInput">
+        <div class="input-group">
+            <span class="input-group-addon">{{ attachment.content_disposition }} ({{ attachment.content_type }})</span>
+            <span class="btn-group form-control">
                     <a href="/inbox/attachment/{{ attachment.id }}/download/" class="btn btn-default btn-attachment">{% trans "Download" %}</a>
                     <a href="/inbox/attachment/{{ attachment.id }}/view/" class="btn btn-default btn-attachment">{% trans "View" %}</a>
                 </span>
