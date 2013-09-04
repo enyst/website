@@ -22,6 +22,7 @@ from django.conf import settings
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from website.helper.paginator import page as page_paginator
 
 from inboxen.models import BlogPost
 
@@ -44,6 +45,7 @@ def view(request, page=1):
     context = {
         "page":_("Blog"),
         "posts":posts,
+        "pages": page_paginator(posts),
         "registration_enabled":settings.ENABLE_REGISTRATION,
     }
 

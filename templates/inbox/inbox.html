@@ -44,7 +44,7 @@
                 <tr class="info">
             {% endif %}
 
-                <td><input type="checkbox" value="email" name="{{ email.eid }}" /></td>
+                <td><input class="form-control" type="checkbox" value="email" name="{{ email.eid }}" /></td>
                 <td title="{{ email.sender }}"><div>{{ email.sender }}</div></td>
                 {% if email.subject %}
                     <td title="{{ email.subject }}"><div><a href="/inbox/{{ email.inbox }}/view/{{ email.eid }}"> {{ email.subject }} </a></div></td>
@@ -60,42 +60,40 @@
     </table>
     </form>
 
-    <div class="pagination text-right">
-        <ul>
-            {% if emails.has_previous %}
-                {% if email_address %}
-                    <li><a href="/inbox/{{ email_address }}/{{ emails.previous_page_number }}">&laquo;</a></li>
-                {% else %}
-                    <li><a href="/inbox/{{ emails.previous_page_number }}">&laquo;</a></li>
-                {% endif %}
+    <ul class="pagination label-right">
+        {% if emails.has_previous %}
+            {% if email_address %}
+                <li><a href="/inbox/{{ email_address }}/{{ emails.previous_page_number }}">&laquo;</a></li>
             {% else %}
-                <li class="disabled"><a href="#">&laquo;</a></li>
+                <li><a href="/inbox/{{ emails.previous_page_number }}">&laquo;</a></li>
             {% endif %}
-            {% for page in pages %}
-                {% if page.active %}
-                    <li class="active">
-                {% else %}
-                    <li>
-                {% endif %}
-                {% if email_address %}
-                    <a href="/inbox/{{ email_address }}/{{ page.page }}">{{ page.page }}</a>
-                {% else %}
-                    <a href="/inbox/{{ page.page }}">{{ page.page }}</a>
-                {% endif %}
-                </li>
-            {% endfor %}
-            
-            {% if emails.has_next %}
-                {% if email_address %}
-                    <li><a href="/inbox/{{ email_address }}/{{ emails.next_page_number }}">&raquo;</a></li>
-                {% else %}
-                    <li><a href="/inbox/{{ emails.next_page_number }}">&raquo;</a></li>
-                {% endif %}
+        {% else %}
+            <li class="disabled"><a href="#">&laquo;</a></li>
+        {% endif %}
+        {% for page in pages %}
+            {% if page.active %}
+                <li class="active">
             {% else %}
-                <li class="disabled"><a href="#">&raquo;</a></li>
+                <li>
             {% endif %}
-        </ul>
-   </div>
+            {% if email_address %}
+                <a href="/inbox/{{ email_address }}/{{ page.page }}">{{ page.page }}</a>
+            {% else %}
+                <a href="/inbox/{{ page.page }}">{{ page.page }}</a>
+            {% endif %}
+            </li>
+        {% endfor %}
+        
+        {% if emails.has_next %}
+            {% if email_address %}
+                <li><a href="/inbox/{{ email_address }}/{{ emails.next_page_number }}">&raquo;</a></li>
+            {% else %}
+                <li><a href="/inbox/{{ emails.next_page_number }}">&raquo;</a></li>
+            {% endif %}
+        {% else %}
+            <li class="disabled"><a href="#">&raquo;</a></li>
+        {% endif %}
+    </ul>
 {% endif %}
 
 {% endblock %}

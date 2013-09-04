@@ -21,8 +21,8 @@
             <div class="tab-pane active" id="tab1"> 
                 <form action="/user/settings/" class="form wide-form form-open-top" method="POST">
                     {% csrf_token %}
-                    <div class="input-append" >
-                        <select name="html-preference">
+                    <div class="input-group" >
+                        <select class="form-control" name="html-preference">
                             {% if htmlpreference == 0 %}
                                 <option value="0" selected="selected">{% trans "Reject HTML" %}</option>
                             {% else %}
@@ -41,7 +41,7 @@
                                 <option value="2">{% trans "Prefer HTML" %}</option>
                             {% endif %}
                         </select>
-                        <span class="add-on">{% trans "for my emails" %}</span>
+                        <span class="input-group-addon">{% trans "for my emails" %}</span>
                         <br /><br />
                     </div><br />
 

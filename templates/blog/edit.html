@@ -8,8 +8,8 @@
     <form class="form wide-form" action="/blog/edit/{{ post.id }}/" method="POST">
         {% csrf_token %}
 
-        <input type="text" value="{{ post.subject }}" name="subject" class="input-xxlarge"><br />
-        <textarea rows="20" name="body" class="input-xxlarge">{{ post.body }}</textarea><br />
+        <input type="text" value="{{ post.subject }}" name="subject" class="form-control input-xxlarge"><br />
+        <textarea rows="20" name="body" class="form-control input-xxlarge">{{ post.body }}</textarea><br />
         <input type="checkbox" name="draft" value="melon" {%if post.draft  %}checked{% endif %}> Draft<br />
         <button class="btn">Save</button><br />
 

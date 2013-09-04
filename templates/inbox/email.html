@@ -15,8 +15,8 @@
 {% if support %}
     <form method="post" action="/help/contact/reply">
         {% csrf_token %}
-        <input type="hidden" name="inbox" value="{{ email.inbox }}">
-        <input type="hidden" name="from" value="{{ email.from }}">
+        <input class="form-control" type="hidden" name="inbox" value="{{ email.inbox }}">
+        <input class="form-control" type="hidden" name="from" value="{{ email.from }}">
         <button type="submit" class="btn label-right">{% trans "Reply" %}</button>
     </form>
 {% endif %}

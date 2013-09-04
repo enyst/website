@@ -5,20 +5,20 @@
 {% block content %}
 <form class="form" action="/email/edit/{{ email }}" method="POST">
     {% csrf_token %}
-    <div class="input-prepend input-append">
-        <span class="add-on">
+    <div class="input-group">
+        <span class="input-group-addon">
             {{ inbox }}
         </span>
-        <a class="btn btn-attachment disabled" id="appendedPrependedInput">@</a>
-        <span class="add-on">
+        <a class="btn btn-attachment disabled" class="form-control">@</a>
+        <span class="input-group-addon">
             {{ domain }}
         </span>
     </div>
 
     {% if tags %}
-        <input type="text" value="{{ tags }}" name="tags">
+        <input class="form-control" type="text" value="{{ tags }}" name="tags">
     {% else %}
-        <input type="text" name="tags" placeholder="{% trans "Tag1, Tag2, etc.." %}">
+        <input class="form-control" type="text" name="tags" placeholder="{% trans "Tag1, Tag2, etc.." %}">
     {% endif %}
 
     <button class="btn">{% trans "Save" %}</button>

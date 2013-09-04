@@ -28,21 +28,26 @@
         </div>
     {% endfor %}
 
-    <div class="pagination text-right">
-        <span class="step-links">
-            {% if posts.has_previous %}
-                <a href="/blog/{{ posts.previous_page_number }}">{% trans "Previous" %}</a>
+    <ul class="pagination label-right">
+        {% if posts.has_previous %}
+            <li><a href="/blog/{{ posts.previous_page_number }}">&laquo;</a></li>
+        {% else %}
+            <li class="disabled"><a href="#">&laquo;</a></li>
+        {% endif %}
+        {% for page in pages %}
+            {% if page.active %}
+                <li class="active">
+            {% else %}
+                <li>
             {% endif %}
+            <a href="/blog/{{ page.page }}">{{ page.page }}</a></li>
+        {% endfor %}
 
-            <span class="current">
-                {% trans "Page" %} {{ posts.number }} {% trans "of" %} {{ posts.paginator.num_pages }}
-            </span>
-
-            {% if posts.has_next %}
-                <a href="/blog/{{ posts.next_page_number }}">{% trans "Next" %}</a>
-            {% endif %}
-        </span>
-    </div>
-
+        {% if posts.has_next %}
+            <li><a href="/blog/{{ posts.next_page_number }}">&raquo;</a></li>
+        {% else %}
+            <li class="disabled"><a href="#">&raquo;</a></li>
+        {% endif %}
+    </ul>
 
 {% endblock %}
