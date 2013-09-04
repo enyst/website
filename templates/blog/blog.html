@@ -11,7 +11,7 @@
 {% block content %}
 
     {% if user.is_staff %}
-        <p class="text-right"><a href="/blog/add/" class="btn">{% trans "New Post" %}</a></p>
+        <p class="text-right"><a href="/blog/add/" class="btn btn-default">{% trans "New Post" %}</a></p>
     {% endif %}
 
     {% for post in posts %}
@@ -21,7 +21,7 @@
         <p> {{ post.body|markdown }}</p><br />
         <br />
         {% if user.is_staff %}
-            <p>    <a href="/blog/edit/{{ post.id }}" class="btn">{% trans "Edit" %}</a>
+            <p>    <a href="/blog/edit/{{ post.id }}" class="btn btn-default">{% trans "Edit" %}</a>
                 <a href="/blog/delete/{{ post.id }}" class="btn btn-danger">{% trans "Delete" %}</a>
             </p>
         {% endif %}

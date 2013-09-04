@@ -9,7 +9,7 @@
         <span class="input-group-addon">
             {{ inbox }}
         </span>
-        <a class="btn btn-attachment disabled" class="form-control">@</a>
+        <a class="btn btn-default btn-attachment disabled" class="form-control">@</a>
         <span class="input-group-addon">
             {{ domain }}
         </span>
@@ -21,7 +21,7 @@
         <input class="form-control" type="text" name="tags" placeholder="{% trans "Tag1, Tag2, etc.." %}">
     {% endif %}
 
-    <button class="btn">{% trans "Save" %}</button>
-    <a class="btn" href="/user/home">{% trans "Cancel" %}</a>
+    <button class="btn btn-defualt">{% trans "Save" %}</button>
+    <a class="btn btn-default" href="/user/home">{% trans "Cancel" %}</a>
 </form>
 {% endblock %}

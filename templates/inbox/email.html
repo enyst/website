@@ -17,7 +17,7 @@
         {% csrf_token %}
         <input class="form-control" type="hidden" name="inbox" value="{{ email.inbox }}">
         <input class="form-control" type="hidden" name="from" value="{{ email.from }}">
-        <button type="submit" class="btn label-right">{% trans "Reply" %}</button>
+        <button type="submit" class="btn btn-default label-right">{% trans "Reply" %}</button>
     </form>
 {% endif %}
 
@@ -42,8 +42,8 @@
         <div class="input-prepend">
             <span class="add-on">{{ attachment.content_disposition }} ({{ attachment.content_type }})</span>
             <span class="btn-group" id="prependedInput">
-                    <a href="/inbox/attachment/{{ attachment.id }}/download/" class="btn btn-attachment">{% trans "Download" %}</a>
-                    <a href="/inbox/attachment/{{ attachment.id }}/view/" class="btn btn-attachment">{% trans "View" %}</a>
+                    <a href="/inbox/attachment/{{ attachment.id }}/download/" class="btn btn-default btn-attachment">{% trans "Download" %}</a>
+                    <a href="/inbox/attachment/{{ attachment.id }}/view/" class="btn btn-default btn-attachment">{% trans "View" %}</a>
                 </span>
         </span>
     </div><br />
