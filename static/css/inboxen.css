@@ -121,7 +121,7 @@ body {
 }
 
 .form {
-    max-width: 210px;
+    max-width: 260px;
     padding: 19px 19px 19px;
     margin: 0 auto 20px;
     background-color: #FFF;
@@ -154,8 +154,9 @@ body {
     border-color: #BBB;
 }
 
-.btn-centre {
-    margin-left:30%;
+.btn-centre, .centre {
+    float: none;
+    text-align: center;
 }
 
 .btn-ontop {

@@ -5,23 +5,16 @@
 {% block content %}
 <form class="form" action="/email/edit/{{ email }}" method="POST">
     {% csrf_token %}
-    <div class="input-group">
-        <span class="input-group-addon">
-            {{ inbox }}
-        </span>
-        <a class="btn btn-default btn-attachment disabled" class="form-control">@</a>
-        <span class="input-group-addon">
-            {{ domain }}
-        </span>
-    </div>
-
+    <span class="centre" style="font-size: 13pt;"><p>{{ inbox}}@{{domain}}</p></span>
     {% if tags %}
         <input class="form-control" type="text" value="{{ tags }}" name="tags">
     {% else %}
         <input class="form-control" type="text" name="tags" placeholder="{% trans "Tag1, Tag2, etc.." %}">
     {% endif %}
 
-    <button class="btn btn-defualt">{% trans "Save" %}</button>
-    <a class="btn btn-default" href="/user/home">{% trans "Cancel" %}</a>
+    <div class="btn-centre">
+        <button class="btn btn-defualt">{% trans "Save" %}</button>
+        <a class="btn btn-default" href="/user/home">{% trans "Cancel" %}</a>
+    </div>
 </form>
 {% endblock %}
