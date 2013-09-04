@@ -87,6 +87,10 @@ body {
     color:#555;
 }
 
+.navbar-inverse {
+    background-color: #fff;
+}
+
 @media (max-width: 979px) {
     .container.navbar-wrapper {
         margin-bottom: 0;
@@ -155,7 +159,7 @@ body {
 }
 
 .btn-centre, .centre {
-    float: none;
+    float: center !important;
     text-align: center;
 }
 
