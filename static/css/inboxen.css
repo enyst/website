@@ -132,7 +132,11 @@ body {
     border: 1px solid #e5e5e5;
 }
 
-.wide-form {
+.form-control {
+}
+
+.wide-form .form-control, .wide-form {
+    width: auto;
     max-width: 100%;
 }
 
