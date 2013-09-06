@@ -602,6 +602,46 @@ address {
   font-style: normal;
   line-height: 1.428571429;
 }
+code,
+pre {
+  font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+}
+code {
+  padding: 2px 4px;
+  font-size: 90%;
+  color: #c7254e;
+  background-color: #f9f2f4;
+  white-space: nowrap;
+  border-radius: 4px;
+}
+pre {
+  display: block;
+  padding: 9.5px;
+  margin: 0 0 10px;
+  font-size: 13px;
+  line-height: 1.428571429;
+  word-break: break-all;
+  word-wrap: break-word;
+  color: #333333;
+  background-color: #f5f5f5;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+}
+pre.prettyprint {
+  margin-bottom: 20px;
+}
+pre code {
+  padding: 0;
+  font-size: inherit;
+  color: inherit;
+  white-space: pre-wrap;
+  background-color: transparent;
+  border: 0;
+}
+.pre-scrollable {
+  max-height: 340px;
+  overflow-y: scroll;
+}
 .container {
   margin-right: auto;
   margin-left: auto;
@@ -3482,34 +3522,6 @@ a.list-group-item.active > .badge,
 }
 .alert-danger .alert-link {
   color: #953b39;
-}
-.media,
-.media-body {
-  overflow: hidden;
-  zoom: 1;
-}
-.media,
-.media .media {
-  margin-top: 15px;
-}
-.media:first-child {
-  margin-top: 0;
-}
-.media-object {
-  display: block;
-}
-.media-heading {
-  margin: 0 0 5px;
-}
-.media > .pull-left {
-  margin-right: 10px;
-}
-.media > .pull-right {
-  margin-left: 10px;
-}
-.media-list {
-  padding-left: 0;
-  list-style: none;
 }
 .close {
   float: right;
