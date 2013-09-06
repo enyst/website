@@ -125,14 +125,30 @@ body {
 }
 
 .form {
-    max-width: 260px;
+    max-width: auto;
+    width: 225px;
     padding: 19px 19px 19px;
     margin: 0 auto 20px;
     background-color: #FFF;
     border: 1px solid #e5e5e5;
 }
 
+.label {
+    font-size: 85%;
+}
+
 .form-control {
+    padding: 3px;
+    height: auto;
+}
+
+.input-group-addon {
+    min-width: 70px;
+    width: auto;
+}
+
+.input-group-addon-block {
+    display: inline-block;
 }
 
 .wide-form .form-control, .wide-form {
@@ -144,9 +160,14 @@ body {
     border-top: none;
 }
 
+.input-wide {
+    width: 100% !important;
+}
+
 .form input {
     height: auto;
     padding: 4px 3px;
+    margin-bottom: 10px;
 }
 
 .form select {
@@ -165,6 +186,7 @@ body {
 .btn-centre, .centre {
     float: center !important;
     text-align: center;
+    margin-left: 25%; /* Need to find a better way */
 }
 
 .btn-ontop {
@@ -178,10 +200,6 @@ body {
 
 .remove-style {
     list-style-type: none;
-}
-
-.constant-inbox {
-    width:100px;
 }
 
 .content {

@@ -10,10 +10,10 @@
 
     <form class="form wide-form" action="/blog/add/" method="POST">
         {% csrf_token %}
-        <input type="text" placeholder="Title" name="title" class="form-control input-xxlarge"><br />
-        <textarea rows="20" name="body" placeholder="Body" class="form-control input-xxlarge"></textarea><br />
-        <input type="checkbox" name="draft" value="melon" checked> Draft<br />
-        <button class="btn btn-default">Post</button>
+        <input type="text" placeholder="Title" name="title" class="form-control input-wide"><br />
+        <textarea rows="20" name="body" placeholder="Body" class="form-control input-wide"></textarea><br />
+        <input type="checkbox" name="draft" value="melon" checked> {% trans "Draft" %}<br />
+        <button class="btn btn-default">{% trans "Post" %}</button>
     </form>
 
 {% endblock %}

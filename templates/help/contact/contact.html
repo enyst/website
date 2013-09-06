@@ -14,31 +14,32 @@
 
     {% if reply %}
         <div class="input-group">
-            <span class="input-group-addon" style="width:50px; text-align:left;">{% trans "From" %}:</span>
-            <select class="form-control" name="reply-from" style="width: 250px;">
+            <span class="input-group-addon">{% trans "From" %}:</span>
+            <select class="form-control" style="width: 250px;" name="reply-from">
                 <option>{{ reply_from }}</option>
             </select>
-            <br />
-            <span class="input-group-addon constant-inbox" style="width:50px; text-align:left;">{% trans "To" %}:</span>
-            <select class="form-control" name="reply-to" style="width: 250px;">
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon">{% trans "To" %}:</span> 
+            <select class="form-control" style="width: 250px;" name="reply-to">
                 <option>{{ reply_to }}</option>
             </select>
         </div><br />
     {% elif user.is_authenticated %}
         <input type="hidden" name="inbox" value="{{ inbox }}">
         <div class="input-group">
-            <span class="input-group-addon constant-inbox">{{ inbox }}@</span>
-            <select class="form-control" name="domain">
+            <span class="input-group-addon">{{ inbox }}@</span>
+            <select class="form-control input-half-width" name="domain">
             {% for domain in domains %}
                 <option value="{{ domain }}">{{ domain }}</option>
             {% endfor %}
             </select>
         </div><br />
     {% else %}
-        <input class="form-control"type="text" name="email" placeholder="Email"><br />
+        <input class="form-control" type="text" name="email" placeholder="Email"><br />
     {% endif %}
-    <input class="form-control" style="width: 303px;" type="text" name="subject" placeholder="Subject"><br />
-    <textarea rows="10" name="body" class="form-control input-xxlarge"></textarea><br />
+    <input class="form-control input-wide" type="text" name="subject" placeholder="Subject"><br />
+    <textarea rows="10" name="body" class="form-control input-wide"></textarea><br />
     <button class="btn btn-default">{% trans "Send" %}</button>
 </form>
 
